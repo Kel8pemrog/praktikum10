@@ -37,3 +37,4 @@ C:\Users\ERACHMAT\source\repos\LibraryManagementSystem\bin\Debug\System.Memory.x
 C:\Users\ERACHMAT\source\repos\LibraryManagementSystem\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\ERACHMAT\source\repos\LibraryManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ERACHMAT\source\repos\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CopyComplete
+C:\Users\ERACHMAT\source\repos\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.GenresForm.resources

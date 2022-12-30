@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using MySql.Data.MySqlClient;
@@ -31,6 +32,41 @@ namespace LibraryManagementSystem
 
         public MySqlConnection getConnection() {
             return connection;
+        }
+
+        public DataTable getData(string query, MySqlParameter[] parameters) {
+            
+            MySqlCommand command = new MySqlCommand(query, getConnection());
+            
+            if (parameters != null) {
+                command.Parameters.AddRange(parameters);
+            }
+
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        public int setData(string query, MySqlParameter[] parameters) {
+
+            MySqlCommand command = new MySqlCommand(query, getConnection());
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            openConnection();
+
+            int commandState = command.ExecuteNonQuery();
+
+            closeConnection();
+
+            return commandState;
         }
     }
 }
